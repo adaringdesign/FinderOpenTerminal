@@ -27,25 +27,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let url = URL(string: event!.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))!.stringValue!) {
             if url.path.characters.count > 0 {
                 if(FileManager.default.fileExists(atPath: url.path)) {
-
-                    do {
-                        let rcContent = "cd \""+url.path+"\" \n" +
-                            "[ -e \"$HOME/.profile\" ] && rcFile=\"~/.profile\" || rcFile=\"/etc/profile\"\n" +
-                            "exec bash -c \"clear;printf '\\e[3J';bash --rcfile $rcFile\""
-                        
-                        try (rcContent).write(toFile: "/tmp/openTerminal", atomically: true, encoding: String.Encoding.utf8)
-                        try FileManager.default.setAttributes([FileAttributeKey.posixPermissions: 0o777], ofItemAtPath: "/tmp/openTerminal")
-                            SwiftySystem.execute("/usr/bin/open", arguments: ["-b", "com.apple.terminal", "/tmp/openTerminal"])
-                    } catch _ {}
-                    
+                    SwiftySystem.execute("/usr/bin/open", arguments: ["-b", "com.apple.terminal", "-n", "--args", "cd", url.path])
                 } else {
                     let error = NSLocalizedString("pathError", comment: "Missing directory message")
                     helpMe(error)
                 }
-                
             }
         }
-        
         exit(0)
     }
     

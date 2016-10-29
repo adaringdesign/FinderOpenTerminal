@@ -16,6 +16,7 @@
 		EDC39F861DC3FC09008978D0 /* SwiftySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC39F851DC3FC09008978D0 /* SwiftySystem.swift */; };
 		EDD3ABF31DC4BFC500F168B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDD3ABF51DC4BFC500F168B6 /* Localizable.strings */; };
 		EDD3ABF81DC4C08C00F168B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDD3ABF51DC4BFC500F168B6 /* Localizable.strings */; };
+		EDD3ABFA1DC4E13500F168B6 /* SwiftySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC39F851DC3FC09008978D0 /* SwiftySystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD3ABFA1DC4E13500F168B6 /* SwiftySystem.swift in Sources */,
 				DD27791C1C7CD144005A1529 /* FinderSync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
