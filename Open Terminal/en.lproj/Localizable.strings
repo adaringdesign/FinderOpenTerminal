@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenTerminal
+
+  Created by Benny Lach on 29.10.16.
+  Copyright © 2016 QP. All rights reserved.
+*/
+
+// Main Application
+information = "This application adds a Open Terminal item in every Finder context menus.";
+pathError = "The specified directory does not exist";
+
+// Finder Extension
+itemTitle = "Open Terminal";
