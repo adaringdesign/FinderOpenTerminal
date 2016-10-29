@@ -183,11 +183,13 @@
 					DD2778D81C7CCBB4005A1529 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4ZHCQJ2SCM;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					DD2779161C7CD144005A1529 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4ZHCQJ2SCM;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
@@ -289,7 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.qparis.openterminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -306,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.qparis.openterminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -324,7 +326,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -342,7 +344,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
