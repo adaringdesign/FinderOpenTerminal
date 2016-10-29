@@ -27,7 +27,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let url = URL(string: event!.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))!.stringValue!) {
             if url.path.characters.count > 0 {
                 if(FileManager.default.fileExists(atPath: url.path)) {
-                    SwiftySystem.execute("/usr/bin/open", arguments: ["-b", "com.apple.terminal", "-n", "--args", "cd", url.path])
+                    
+                    let arg =   "tell application \"System Events\"\n" +
+                                    // Check if Terminal.app is running
+                                    "if (application process \"Terminal\" exists) then\n" +
+                                        // if Terminal.app is running make sure it is in the foreground
+                                        "tell application \"Terminal\"\n" +
+                                            "activate\n" +
+                                        "end tell\n" +
+                                        // Open a new window in the Terminal.app by triggering ⌘+n
+                                        "tell application \"System Events\" to tell process \"Terminal\" to keystroke \"n\" using command down\n" +
+                                    "else\n" +
+                                        // If Terminal.app is not running bring it up
+                                        "tell application \"Terminal\"\n" +
+                                            "activate\n" +
+                                        "end tell\n" +
+                                    "end if\n" +
+                                "end tell\n" +
+                                // Switch to the requested directory and clear made input
+                                "tell application \"Terminal\"\n" +
+                                    "do script \"cd \(url.path) && clear\" in window 1\n" +
+                                "end tell"
+                    
+                    SwiftySystem.execute("usr/bin/osascript", arguments: ["-e", arg])
                 } else {
                     let error = NSLocalizedString("pathError", comment: "Missing directory message")
                     helpMe(error)
