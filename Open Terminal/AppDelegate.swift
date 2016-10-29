@@ -39,7 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     } catch _ {}
                     
                 } else {
-                    helpMe("The specified directory does not exist")
+                    let error = NSLocalizedString("pathError", comment: "Missing directory message")
+                    helpMe(error)
                 }
                 
             }
@@ -56,7 +57,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     fileprivate func helpMe() {
-        helpMe("This application adds a Open Terminal item in every Finder context menus.\n\n(c) Quentin PÂRIS 2016 - http://quentin.paris")
+        let info = NSLocalizedString("information", comment: "Information presented on startup")
+        helpMe(info + "\n\n(c) Quentin PÂRIS 2016 - http://quentin.paris")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
