@@ -46,10 +46,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                 "end tell\n" +
                                 // Switch to the requested directory and clear made input
                                 "tell application \"Terminal\"\n" +
-                                    "do script \"cd \(url.path) && clear\" in window 1\n" +
+                                    "do script \"cd '\(url.path)' && clear\" in window 1\n" +
                                 "end tell"
                     
-                    SwiftySystem.execute("usr/bin/osascript", arguments: ["-e", arg])
+                    SwiftySystem.execute("/usr/bin/osascript", arguments: ["-e", arg])
                 } else {
                     let error = NSLocalizedString("pathError", comment: "Missing directory message")
                     helpMe(error)
