@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SwiftySystem.execute("/usr/bin/pluginkit", arguments: ["pluginkit", "-e", "use", "-i", "fr.qparis.openterminal.Open-Terminal-Finder-Extension"])
         SwiftySystem.execute("/usr/bin/killall",arguments: ["Finder"])
         helpMe()
+        
         exit(0)
     }
     
@@ -46,9 +47,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                 "end tell\n" +
                                 // Switch to the requested directory and clear made input
                                 "tell application \"Terminal\"\n" +
+                                    "delay 0.01\n" +
                                     "do script \"cd '\(url.path)' && clear\" in window 1\n" +
                                 "end tell"
-                    
+                   
                     SwiftySystem.execute("/usr/bin/osascript", arguments: ["-e", arg])
                 } else {
                     let error = NSLocalizedString("pathError", comment: "Missing directory message")
