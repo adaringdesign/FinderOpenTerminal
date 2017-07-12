@@ -1,6 +1,8 @@
-# FinderOpenTerminal
-Open Terminal contextual menu for Finder
+# OpeninTerminal
+Open the current path in a Terminal window/tab from a contextual menu in Finder
 
-Tested on OSX 10.11.3
+Tested on OSX 10.12.5
 
-See http://openterminal.quentin.paris to get more details or to download binaries 
+# Credits
+Original work: https://github.com/qparis/FinderOpenTerminal
+Modified version: https://github.com/B-Lach/FinderOpenTerminal
