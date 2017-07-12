@@ -3,8 +3,8 @@
 //  FinderExtension
 //
 //  Created by Quentin PÂRIS on 23/02/2016.
-//  Modified by Rutger Valk-van de Klundert
-//  Copyright © 2017 A Daring Design. All rights reserved.//
+//  Copyright © 2016 QP. All rights reserved.
+//
 
 import Cocoa
 import FinderSync
@@ -26,7 +26,7 @@ class FinderSync: FIFinderSync {
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         // Produce a menu for the extension.
-        let menu = NSMenu(title: "Open in Terminal")
+        let menu = NSMenu(title: "Open Terminal")
         let title = NSLocalizedString("itemTitle", comment: "The title for the item shown in the context menu")
         menu.addItem(withTitle: title, action: #selector(FinderSync.openTerminal(_:)), keyEquivalent: "")
         return menu

@@ -1,10 +1,9 @@
 //
 //  AppDelegate.swift
-//  Open in Terminal
+//  Open Terminal
 //
 //  Created by Quentin PÂRIS on 23/02/2016.
-//  Modified by Rutger Valk-van de Klundert
-//  Copyright © 2017 A Daring Design. All rights reserved.
+//  Copyright © 2016 QP. All rights reserved.
 //
 
 import Cocoa
@@ -18,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        SwiftySystem.execute("/usr/bin/pluginkit", arguments: ["pluginkit", "-e", "use", "-i", "com.add.openterminal.Open-Terminal-Finder-Extension"])
+        SwiftySystem.execute("/usr/bin/pluginkit", arguments: ["pluginkit", "-e", "use", "-i", "fr.qparis.openterminal.Open-Terminal-Finder-Extension"])
         SwiftySystem.execute("/usr/bin/killall",arguments: ["Finder"])
         helpMe()
         
@@ -93,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                             "end if\n" +
                                     "end tell\n" +
                                 "end if\n"
-
+                    
                     let arg_v3 = "if application \"Terminal\" is running then\n" +
                                     "tell application \"System Events\" to set InCurrentDesktop to windows of process \"Terminal\"\n" +
                                     "tell application \"Terminal\"\n" +
@@ -121,7 +120,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                     "end tell\n" +
                                 "end if\n"
                     
-                    
                     SwiftySystem.execute("/usr/bin/osascript", arguments: ["-e", arg_v3])
                 } else {
                     let error = NSLocalizedString("pathError", comment: "Missing directory message")
@@ -141,7 +139,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     fileprivate func helpMe() {
         let info = NSLocalizedString("information", comment: "Information presented on startup")
-        helpMe(info + "\n\n(c) A Daring Design 2017 - https://www.adaringdesign.nl")
+        helpMe(info + "\n\n(c) Quentin PÂRIS 2016 - http://quentin.paris")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

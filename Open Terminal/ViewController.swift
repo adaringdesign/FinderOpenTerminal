@@ -1,10 +1,9 @@
 //
 //  ViewController.swift
-//  Open in Terminal
+//  Open Terminal
 //
 //  Created by Quentin PÂRIS on 23/02/2016.
-//  Modified by Rutger Valk-van de Klundert
-//  Copyright © 2017 A Daring Design. All rights reserved.
+//  Copyright © 2016 QP. All rights reserved.
 //
 
 import Cocoa
